@@ -11,13 +11,14 @@ import javax.persistence.TypedQuery;
 
 public class DAO<E> {
 	
-	private static EntityManagerFactory emf; // quando há um bloco estatico deve ser inicializada em um bloco estatico
+	// quando há um bloco estatico deve ser inicializada em um bloco estatico
+	private static EntityManagerFactory emf;
 	private EntityManager em;
 	private Class<E> classe;
 	
 	static {
 		try {
-			emf = Persistence.createEntityManagerFactory("exercicio-jpa");
+			emf = Persistence.createEntityManagerFactory("exercicios-jpa");
 		} catch(Exception e) {
 			//logar -> log4j
 		}
